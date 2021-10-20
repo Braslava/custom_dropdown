@@ -3,7 +3,6 @@
 const dropdownContainer = document.querySelector('.js-dropdown-container'); 
 const openBtn = dropdownContainer.querySelector('.js-open-btn'); 
 const dropdownMenu = dropdownContainer.querySelector('.js-menu'); 
-//const menuOptions = dropdownContainer.querySelectorAll('.js-option'); 
 const selectedTextBox = dropdownContainer.querySelector('.js-dropdown-sidebar'); 
 let selection: HTMLParagraphElement = dropdownContainer.querySelector('.selection'); 
 
@@ -25,13 +24,14 @@ openBtn.addEventListener('click', () => {
         openDropdown(); 
     }
 }); 
+const displayValues: HTMLParagraphElement[] = []; 
+
 
 const menuOptions: HTMLAnchorElement[] = choices.map((choice, index) => {
     const menuOption = document.createElement("a"); 
     const optionText = document.createTextNode(`${choices[index]}`); 
     menuOption.appendChild(optionText); 
     menuOption.classList.add('option'); 
-    //menuOption.classList.add('option:focus'); 
     dropdownMenu.appendChild(menuOption);
 
     const displayValue = document.createElement("p"); 
@@ -40,12 +40,26 @@ const menuOptions: HTMLAnchorElement[] = choices.map((choice, index) => {
     selectedTextBox.appendChild(displayValue)
     displayValue.classList.add('selection');
 
-    menuOption.addEventListener('click', () => {
-        displayValue.classList.add('show'); 
-        closeDropdown();
-    })
+    displayValues.push(displayValue);
+
     return menuOption;
 }); 
+
+let activeItem: HTMLParagraphElement; 
+
+menuOptions.forEach((menuOption, i) => {
+    menuOption.addEventListener('click', () => {
+    // Need to remove 'show' class from already selected options 
+    if (!!activeItem === true) {
+        activeItem.classList.remove('show'); 
+    }
+    displayValues[i].classList.add('show'); 
+    displayValues[i] = activeItem; 
+    closeDropdown();
+    }); 
+}
+   
+)
 
 
 document.addEventListener('click', (event) => {
