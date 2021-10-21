@@ -75,8 +75,10 @@
     line-height: 200%;
     text-decoration: none;
     color: #616161;
+    border: none; 
+    background-color: white;
     &:focus, :hover {
-      background-color: #E1F5FE;
+      background-color: #98cce4;
     }
   }
 

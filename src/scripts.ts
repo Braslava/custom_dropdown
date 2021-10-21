@@ -27,8 +27,8 @@ openBtn.addEventListener('click', () => {
 const displayValues: HTMLParagraphElement[] = []; 
 
 
-const menuOptions: HTMLAnchorElement[] = choices.map((choice, index) => {
-    const menuOption = document.createElement("a"); 
+const menuOptions: HTMLButtonElement[] = choices.map((choice, index) => {
+    const menuOption = document.createElement("button"); 
     const optionText = document.createTextNode(`${choices[index]}`); 
     menuOption.appendChild(optionText); 
     menuOption.classList.add('option'); 
