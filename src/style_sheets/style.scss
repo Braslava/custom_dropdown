@@ -1,91 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
 
-*, *:before, *:after  {
-    box-sizing: border-box;
-  }
-  
-  .body {
-    line-height: 140%;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .dropdown-container {
-    display: grid;
-    width: 100%; 
-    max-width: 500px;
-    //min-width: 300px;
-    grid-template-columns:  1fr 1fr;
-    margin: 0 auto;
-    justify-content: left;
-    gap: 10px; 
-    padding: 20px 10px;
-  }
-  
-  .button {
-    background-color: #246CE2;
-    padding: 15px;
-    color: #FFFFFF;
-    border: none; 
-    border-radius: 5px;
-    width: 100%;
-    font-size: 17px;
-    cursor: pointer;
-    &:hover, :focus {
-      opacity: 0.7;
-    }
-  }
-  
-  .dropdown {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px; 
-  }
-  
-  .dropdown__menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    font-family: Roboto;
-    font-size: 14px;
-    gap: 5px; 
-    padding: 20px 5px; 
-    border-radius: 5px;
-    box-shadow: 10px 10px 5px grey;
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
-    visibility: hidden;
-  }
+.body {
+	line-height: 140%;
+	font-family: 'Roboto', sans-serif;
+	font: inherit;
+}
 
-  .selection {
-    font-size: 17px;
-    color: #000000;
-    font-family: 'Roboto', sans-serif;
-    visibility: hidden;
-    position: absolute;
-  }
-  
-  .option {
-    padding: 0px; 
-    cursor: pointer;
-    line-height: 200%;
-    text-decoration: none;
-    color: #616161;
-    border: none; 
-    background-color: white;
-    &:focus, :hover {
-      background-color: #98cce4;
-    }
-  }
+.dropdown-container {
+	display: grid;
+	width: 100%;
+	max-width: 500px;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 auto;
+	justify-content: left;
+	gap: 10px;
+	padding: 20px 10px;
+}
 
+.button {
+	background-color: #246ce2;
+	padding: 1rem;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 17px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.7;
+	}
+}
 
-  .show {
-    visibility: visible; 
-  }
-  
-  
-  
+.dropdown {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 5px;
+}
+
+.dropdown__menu {
+	display: grid;
+	grid-template-columns: 1fr;
+	font-family: 'Roboto', sans-serif;
+	gap: 5px;
+	padding: 20px 5px;
+	border-radius: 5px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+	visibility: hidden;
+}
+
+.dropdown-sidebar {
+	padding: 1rem;
+}
+
+.selected-item {
+	font-size: 17px;
+	color: #616161;
+	font-family: 'Roboto', sans-serif;
+}
+
+.option {
+	padding: 0px;
+	font-size: 16px;
+	cursor: pointer;
+	line-height: 200%;
+	color: #616161;
+	border: none;
+	background-color: white;
+	&:hover {
+		background-color: #98cce4;
+	}
+}
+
+.option:focus {
+	background-color: #98cce4;
+}
+
+.show {
+	visibility: visible;
+}
